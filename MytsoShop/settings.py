@@ -29,7 +29,6 @@ def get_ip():
         return "Unable to get IP address"
 
 # Print the IP address
-print("Your IP address is:", get_ip())
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -144,11 +143,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-if 'localhost' in ALLOWED_HOSTS:
-    print('local')
-elif 'mytso.net.ly' in ALLOWED_HOSTS:
-    print('wide')
-
+if '192.168.41.61' in get_ip():
+    print('localhost')
+elif '66.29.132.73':
+    print('wide domain')
 STATICFILES_DIRS = [
     os.path.join(os.path.join(BASE_DIR, 'frontend'), 'build', 'static')
 ]
