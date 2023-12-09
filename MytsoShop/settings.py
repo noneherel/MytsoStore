@@ -150,7 +150,7 @@ if '192.168.41.61' in get_ip():
 
 
     STATIC_ROOT = os.path.join(BASE_DIR, 'frontend')
-elif '66.29.132.73':
+elif '66.29.132.73' in get_ip():
     STATIC_ROOT = '/home/mytsrdgl/mytso.ly/static'
     MEDIA_ROOT = '/home/mytsrdgl/mytso.ly/media'
 
