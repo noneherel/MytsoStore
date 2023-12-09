@@ -12,6 +12,24 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import socket
+def get_ip():
+    try:
+        # Creating a socket object
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        
+        # Connecting to a remote server (Google's public DNS server)
+        s.connect(("8.8.8.8", 80))
+        
+        # Getting the local IP address
+        ip_address = s.getsockname()[0]
+        
+        return ip_address
+    except socket.error:
+        return "Unable to get IP address"
+
+# Print the IP address
+print("Your IP address is:", get_ip())
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
